@@ -1,0 +1,15 @@
+- name: "Suspicious Keywords"
+  description: "Detects urgency/fear-based language."
+  severity: "high"
+  conditions:
+    keywords:
+      - "urgent"
+      - "password"
+      - "verify now"
+    match_threshold: 2  # At least 2 keywords must match
+
+- name: "Suspicious Domain in Links"
+  description: "Detects links from newly registered domains."
+  severity: "medium"
+  conditions:
+    domain_age_days_max: 30  # Flag domains registered <30 days ago
